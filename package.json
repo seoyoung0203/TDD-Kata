@@ -1,0 +1,25 @@
+{
+  "name": "TDD-Kata",
+  "version": "1.0.0",
+  "description": "tdd kata - string calculator",
+  "main": "stringCalculator.spec.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seoyoung0203/TDD-Kata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seoyoung0203/TDD-Kata/issues"
+  },
+  "homepage": "https://github.com/seoyoung0203/TDD-Kata#readme",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.1"
+  }
+}
