@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/seoyoung0203/TDD-Kata#readme",
   "devDependencies": {
-    "jest": "^27.0.4"
+    "eslint": "^7.28.0",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.1"
   }
 }
