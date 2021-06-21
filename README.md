@@ -1,7 +1,5 @@
 # TDD-Kata
 
-tdd kata - string calculator
-
 ## 0. 파일명과 구조
 
 루트 폴더 아래에 stringCalculator.js를 생성한다.
