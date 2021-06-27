@@ -50,4 +50,9 @@ describe("String calculator", () => {
     expect(() => stringCalculator("1,-2,-3")).toThrow();
     expect(() => stringCalculator("1,-2,-3")).toThrowError("음수는 지원하지 않습니다.(-2,-3)");
   });
+
+  test("1000보다 큰 숫자는 덧셈x", () => {
+    const result = stringCalculator("1,3,10001");
+    expect(result).toBe(4);
+  });
 });
