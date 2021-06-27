@@ -35,4 +35,14 @@ describe("String calculator", () => {
     const result = stringCalculator("1\\n2,3");
     expect(result).toBe(6);
   });
+  
+  test("커스텀 구분자를 지원", () => {
+    const result = stringCalculator("//[;]\n1;2");
+    expect(result).toBe(3);
+  });
+
+  test("커스텀 구분자를 지원2", () => {
+    const result = stringCalculator("//[@@]\n1@@2@@3");
+    expect(result).toBe(6);
+  });
 });
