@@ -2,11 +2,20 @@ exports.stringCalculator = input => {
   if (input.length === 0) return 0;
 
   const { regex, str } = getDelimiter(input);
-  const nums = str.replace(regex, ' ');
-  return sum(nums.split(' '));
+  const nums = str.replace(regex, ' ').split(' ');
+  const negativeNums = nums.filter(num => {
+    if(num < 0) {
+      return num
+    }
+  });
+
+  if(negativeNums.length > 0) {
+    throw new Error(`음수는 지원하지 않습니다.(${negativeNums.join()})`);
+  }
+  return sum(nums);
 };
 
-const sum = nums =>
+const sum = nums => 
   nums.reduce(
     (acc, cur) => (acc += parseInt(cur || 0)),
     0)
