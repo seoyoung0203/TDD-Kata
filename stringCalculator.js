@@ -2,14 +2,21 @@ exports.stringCalculator = input => {
   if (input.length === 0) return 0;
 
   const { regex, str } = getDelimiter(input);
-  const nums = str.replace(regex, ' ');
-  return sum(nums.split(' '));
+  const nums = throwNegativeNums(str.replace(regex, ' ').split(' '));
+  
+  return sum(nums);
 };
 
-const sum = nums =>
-  nums.reduce(
-    (acc, cur) => (acc += parseInt(cur || 0)),
-    0)
+const sum = nums => {
+  const limit = 1000;
+  let result = 0;
+
+  nums.forEach(num => {
+    if(num < limit) result += (parseInt(num) || 0);
+  });
+  
+  return result;
+}
 
 const getDelimiter = str => {
   let regex = /[,\\n]/g;
@@ -21,4 +28,18 @@ const getDelimiter = str => {
   }
 
   return { regex, str };
+}
+
+const throwNegativeNums = nums => {
+  const negativeNums = nums.filter(num => {
+    if(num < 0) {
+      return num
+    }
+  });
+
+  if(negativeNums.length > 0) {
+    throw new Error(`음수는 지원하지 않습니다.(${negativeNums.join()})`);
+  }
+
+  return nums;
 }
